@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Employee</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin: auto;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+        input[type="text"],
+        input[type="number"],
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="submit"] {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #218838;
+        }
+        .back-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 15px;
+            background-color: #007BFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Update Employee</h1>
+    <form method="POST">
+        <label for="eno">Employee Number:</label>
+        <input type="number" id="eno" name="eno" value="{{ employee.eno }}" required>
+
+        <label for="ename">Employee Name:</label>
+        <input type="text" id="ename" name="ename" value="{{ employee.ename }}" required>
+
+        <label for="edesign">Designation:</label>
+        <input type="text" id="edesign" name="edesign" value="{{ employee.edesign }}" required>
+
+        <label for="esalary">Salary:</label>
+        <input type="number" id="esalary" name="esalary" value="{{ employee.esalary }}" required>
+
+        <input type="submit" value="Update Employee">
+    </form>
+    <a class="back-button" href="{{ url_for('index') }}">Back to Employee List</a>
+</body>
+</html>
